@@ -1,0 +1,27 @@
+<div class="container">
+    <img [src]="food.imageUrl" [alt]="food.name">
+</div>
+<div class="details">
+    <div class="header">
+        <span class="name">
+            {{food.name}}
+        </span>
+        <span class="bi bi-heart-fill favorite {{food.favorite?'':'not'}}"></span>
+        <star-rating 
+            [value]="food.star" 
+            [totalstars]="5" 
+            checkedcolor="red" 
+            uncheckedcolor="black" 
+            size="24px" 
+            [readonly]="true">
+        </star-rating>
+    </div>
+    <div class="origins">
+        <span *ngFor="let origin of food.origins">
+            {{origin}}
+        </span>
+    </div>
+    <div class="tags">
+        <app-tags></app-tags>
+    </div>
+</div>
